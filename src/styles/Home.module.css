@@ -1,68 +1,6 @@
-/* Navbar Styles */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
-  padding: 1rem 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.navContainer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #171717;
-}
-
-.navMenu {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
-
-.navMenu a {
-  color: #666;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  position: relative;
-}
-
-.navMenu a:hover {
-  color: #171717;
-}
-
-.navMenu a.active {
-  color: #171717;
-}
-
-.navMenu a.active::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: #171717;
-}
-
 /* Main Content */
 .main {
-  padding-top: 0;
+  width: 100%;
 }
 
 /* Container */
@@ -74,8 +12,11 @@
 
 /* Hero Section */
 .hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
   background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
-  padding-top: calc(5rem + 60px); /* Account for fixed navbar */
+  padding: 5rem 0;
 }
 
 .hero h1 {
@@ -91,6 +32,10 @@
 
 /* About Section */
 .about {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 5rem 0;
   background: #ffffff;
 }
 
@@ -107,6 +52,10 @@
 
 /* Vision Section */
 .vision {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 5rem 0;
   background: #f9f9f9;
 }
 
@@ -123,6 +72,10 @@
 
 /* Contacts Section */
 .contacts {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 5rem 0;
   background: #ffffff;
 }
 
@@ -139,27 +92,6 @@
 
 /* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
-  .navbar {
-    background: rgba(10, 10, 10, 0.95);
-  }
-
-  .logo {
-    color: #ededed;
-  }
-
-  .navMenu a {
-    color: #999;
-  }
-
-  .navMenu a:hover,
-  .navMenu a.active {
-    color: #ededed;
-  }
-
-  .navMenu a.active::after {
-    background: #ededed;
-  }
-
   .hero {
     background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
   }
@@ -190,20 +122,16 @@
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  .navContainer {
-    padding: 0 1rem;
-  }
-
-  .navMenu {
-    gap: 1rem;
-    font-size: 0.9rem;
-  }
-
-  .hero {
-    padding-top: calc(3rem + 60px);
-  }
-
   .container {
     padding: 0 1rem;
+  }
+
+  .hero,
+  .about,
+  .vision,
+  .contacts {
+    padding: 3rem 0;
+    /* Manteniamo min-height: 100vh anche su mobile */
+    min-height: 100vh;
   }
 }
